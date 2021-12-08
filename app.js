@@ -117,45 +117,47 @@
 // console.log(title.id)
 // console.log(title.className)
 
-const h1 = document.querySelector("div.hello:first-child h1") // 첫번째꺼 가져온다. 다 가져오려면 All 붙이기
+const h1 = document.querySelector("div.hello:first-child h1"); // 첫번째꺼 가져온다. 다 가져오려면 All 붙이기
 // 아이디는 .   클래스는 # 앞에 붙이기
 
+
+
 function handleTitleClick() {
-  h1.style.color = 'blue';
+  h1.classList.toggle("clicked" );
 }
+h1.addEventListener("click", handleTitleClick);
 
-function handleMouseEnter() {
-  h1.innerText = "Mouse is here!";
-}
 
-function handleMouseLeave() {
-  h1.innerText = "Mouse is gone!";
-}
+// function handleTitleClick() {
+//   h1.style.color = 'blue';
+// }
+// function handleMouseLeave() {
+//   h1.innerText = "Mouse is gone!";
+// }
 
-function handleWindowResize() {
-  document.body.style.backgroundColor = "tomato";
-}
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato";
+// }
 
-function handleWindowCopy() {
-  alert("copier!");
-}
+// function handleWindowCopy() {
+//   alert("copier!");
+// }
 
-function handleWindowOffLine() {
-  alert("SOS no WIFI")
-}
+// function handleWindowOffLine() {
+//   alert("SOS no WIFI")
+// }
 
-function handleWindowOnLine() {
-  alert("ALL GOOD")
-}
-// title.addEventListener("click", handleTitleClick);
+// function handleWindowOnLine() {
+//   alert("ALL GOOD")
+// }
 // title.addEventListener("mouseenter", handleMouseEnter);
 // title.addEventListener("mouseleave", handleMouseLeave);
-h1.onclick = handleTitleClick;
-h1.onmouseenter = handleMouseEnter;
-// 이런 형식으로도 할수 있지만 addEventListener 로 하면 나중에 removeEventListener로 지울수도 있기 때문에
-// addEventListener 이게 더 낫다
+// h1.onclick = handleTitleClick;
+// h1.onmouseenter = handleMouseEnter;
+// // 이런 형식으로도 할수 있지만 addEventListener 로 하면 나중에 removeEventListener로 지울수도 있기 때문에
+// // addEventListener 이게 더 낫다
 
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-window.addEventListener("offline", handleWindowOffLine);
-window.addEventListener("online", handleWindowOnLine);
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offline", handleWindowOffLine);
+// window.addEventListener("online", handleWindowOnLine);
