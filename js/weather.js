@@ -1,4 +1,3 @@
-const API_KEY = "c5252b0cc919f723f040b97fa3c07665"
 
 
 function onGeoOk(position) {
