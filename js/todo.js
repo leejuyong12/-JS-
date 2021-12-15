@@ -13,6 +13,8 @@ function saveToDos() {
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));  // 클릭한 li 제외하고 냅둔다.
+  saveToDos();
 
 }
 
@@ -44,12 +46,16 @@ function handleToDoSubmit (event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(saveToDos != null){
-  const parsedToDos = JSON.parse(saveToDos);
+  const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;      // 새로고침해도 이전꺼 저장되도록
   parsedToDos.forEach(paintToDo);
+}
+
+function sexyFilter(item) {
+  if (item !== deleteToDo(item)) {
+      return true;
+  }
 }
